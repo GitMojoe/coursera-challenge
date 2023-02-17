@@ -109,7 +109,22 @@
         <p id="copyright">copyright info</p>
       </footer>
     </main>
-<script> document.getElementById('copyright').style.color="green";</script>  
+<script> 
+
+document.getElementById('copyright').style.color="green";
+var allPs = document.getElementsByTagName('p');
+for (let i = 0; i < allPs.length; i++) {
+	allPs[i].style.color="green";
+	i++;
+}
+/* or you can do it in this way
+var allPs = document.getElementsByTagName("p");
+for(let eachP of allPs){
+eachP.style.color="green";
+}
+*/
+
+</script>  
 
 
 </body>
