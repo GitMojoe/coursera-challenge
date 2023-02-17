@@ -36,6 +36,11 @@
       article {
         overflow: hidden;
       }
+
+	  /* challenge 21*/
+	  a {
+		color: blue;
+	  }
     </style>
   </head>
 
@@ -131,7 +136,7 @@
 
       //we use querySelector proproty to get tags and change them
       //var h1Color = document.querySelector('h1');
-	  
+
 // challenge 19
       var h1Color = document.getElementsByTagName("h1");
       h1Color.className = "red";
@@ -144,6 +149,23 @@
       for (let eachtP of articleTwoPs) {
         eachtP.style.color = "blue";
       }
+
+
+	  // challenge 21
+
+var wikiLinks = document.querySelectorAll('a href');
+var wikipedia = "href=https://en.wikipedia.org/wiki/Llama";
+for (let i = 0; i < wikiLinks.length; i++) {
+
+	if (wikiLinks[i] === wikipedia) {
+		wikiLinks[i].style.color = "red";
+	}
+	
+	
+	
+}
+
+	
     </script>
   </body>
 </html>
