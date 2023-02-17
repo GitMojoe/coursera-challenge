@@ -36,9 +36,6 @@
       article {
         overflow: hidden;
       }
-
-
-	
     </style>
   </head>
 
@@ -64,9 +61,11 @@
           <footer>&mdash;Dr. Seuss</footer>
         </blockquote>
         <p>
-          <img src="http://meadpoint.net/images/sillyajax.jpg" alt="Ajax" />Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, dolor?
-          Quod minima voluptatem at optio provident,
+          <img
+            src="http://meadpoint.net/images/sillyajax.jpg"
+            alt="Ajax"
+          />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,
+          dolor? Quod minima voluptatem at optio provident,
           <a href="http://google.com">quam porro ut</a> impedit officia,
           consectetur minus eaque cumque voluptates, mollitia beatae
           necessitatibus.
@@ -115,8 +114,7 @@
     </main>
 
     <script>
-
-	// challenge 17
+      // challenge 17
       document.getElementById("copyright").style.color = "green";
 
       /*or you can do it in this way
@@ -126,7 +124,7 @@
 
         i++;
       }*/
-// challenge 18
+      // challenge 18
       var allPs = document.getElementsByTagName("p");
       for (let eachP of allPs) {
         eachP.style.color = "green";
@@ -135,38 +133,30 @@
       //we use querySelector proproty to get tags and change them
       //var h1Color = document.querySelector('h1');
 
-// challenge 19
+      // challenge 19
       var h1Color = document.getElementsByTagName("h1");
       h1Color.className = "red";
       var dateColor = document.getElementsByClassName("date");
       dateColor.className = "red";
-// challenge 20
-	  var dogimg = document.getElementById('one').querySelector('Img');
-	 dogimg.setAttribute('src','http://meadpoint.net/images/xmasajax.jpg');
+      // challenge 20
+      var dogimg = document.getElementById("one").querySelector("Img");
+      dogimg.setAttribute("src", "http://meadpoint.net/images/xmasajax.jpg");
       var articleTwoPs = document.getElementById("two").querySelectorAll("p");
       for (let eachtP of articleTwoPs) {
         eachtP.style.color = "blue";
       }
 
+      // challenge 21
 
-	  // challenge 21
+      var wikiLinks = document.getElementsByTagName("a");
 
-var wikiLinks = document.querySelectorAll('a');
-
-for (let i = 0; i < wikiLinks.length; i++) {
-
-	if (wikiLinks[i] === 'modi illum nisi quas') {
-		wikiLinks[i].style.color = "red";
-	}else{
-
-		wikiLinks[i].style.color = "blue";
-	}
-	
-	
-	
-}
-
-	
+      for (let i = 0; i < wikiLinks.length; i++) {
+        var wiki = wikiLinks[i].getAttribute("href");
+        if (wiki === "https://en.wikipedia.org/wiki/Llama") {
+			wikiLinks[i].innerHTML="Llamas are cool!";
+			
+        }
+      }
     </script>
   </body>
 </html>
