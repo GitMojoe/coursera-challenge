@@ -18,6 +18,9 @@
       .blue {
         color: blue;
       }
+      .date {
+        color: red;
+      }
       .red {
         color: red;
       }
@@ -39,7 +42,7 @@
   <body>
     <main>
       <header>
-        <h1>Page Title</h1>
+        <h1 class="red">Page Title</h1>
         <p>Some basic information about this page.</p>
       </header>
 
@@ -58,11 +61,9 @@
           <footer>&mdash;Dr. Seuss</footer>
         </blockquote>
         <p>
-          <img
-            src="http://meadpoint.net/images/sillyajax.jpg"
-            alt="Ajax"
-          />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit,
-          dolor? Quod minima voluptatem at optio provident,
+          <img src="http://meadpoint.net/images/sillyajax.jpg" alt="Ajax" />Lorem
+          ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, dolor?
+          Quod minima voluptatem at optio provident,
           <a href="http://google.com">quam porro ut</a> impedit officia,
           consectetur minus eaque cumque voluptates, mollitia beatae
           necessitatibus.
@@ -83,7 +84,7 @@
 
       <article id="two">
         <h2>Article Title</h2>
-        <p class="date">Today's Date</p>
+        <p>Today's Date</p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero enim
           voluptatem recusandae, magni nesciunt quia tenetur doloribus labore
@@ -109,23 +110,40 @@
         <p id="copyright">copyright info</p>
       </footer>
     </main>
-<script> 
 
-document.getElementById('copyright').style.color="green";
-var allPs = document.getElementsByTagName('p');
-for (let i = 0; i < allPs.length; i++) {
-	allPs[i].style.color="green";
-	i++;
-}
-/* or you can do it in this way
-var allPs = document.getElementsByTagName("p");
-for(let eachP of allPs){
-eachP.style.color="green";
-}
-*/
+    <script>
 
-</script>  
+	// challenge 17
+      document.getElementById("copyright").style.color = "green";
 
+      /*or you can do it in this way
+      var allPs = document.getElementsByTagName("p");
+      for (let i = 0; i < allPs.length; i++) {
+        allPs[i].style.color = "green";
 
-</body>
+        i++;
+      }*/
+// challenge 18
+      var allPs = document.getElementsByTagName("p");
+      for (let eachP of allPs) {
+        eachP.style.color = "green";
+      }
+
+      //we use querySelector proproty to get tags and change them
+      //var h1Color = document.querySelector('h1');
+	  
+// challenge 19
+      var h1Color = document.getElementsByTagName("h1");
+      h1Color.className = "red";
+      var dateColor = document.getElementsByClassName("date");
+      dateColor.className = "red";
+// challenge 20
+	  var dogimg = document.getElementById('one').querySelector('Img');
+	 dogimg.setAttribute('src','http://meadpoint.net/images/xmasajax.jpg');
+      var articleTwoPs = document.getElementById("two").querySelectorAll("p");
+      for (let eachtP of articleTwoPs) {
+        eachtP.style.color = "blue";
+      }
+    </script>
+  </body>
 </html>
