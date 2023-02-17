@@ -37,10 +37,8 @@
         overflow: hidden;
       }
 
-	  /* challenge 21*/
-	  a {
-		color: blue;
-	  }
+
+	
     </style>
   </head>
 
@@ -153,12 +151,15 @@
 
 	  // challenge 21
 
-var wikiLinks = document.querySelectorAll('a href');
-var wikipedia = "href=https://en.wikipedia.org/wiki/Llama";
+var wikiLinks = document.querySelectorAll('a');
+
 for (let i = 0; i < wikiLinks.length; i++) {
 
-	if (wikiLinks[i] === wikipedia) {
+	if (wikiLinks[i] === 'modi illum nisi quas') {
 		wikiLinks[i].style.color = "red";
+	}else{
+
+		wikiLinks[i].style.color = "blue";
 	}
 	
 	
