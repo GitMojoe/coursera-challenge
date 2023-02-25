@@ -11,9 +11,7 @@
 
     <div>
         <p>Here is the first paragraph of text</p>
-        <p>Here is the second paragraph of text</p>
-        <p>Here is the third paragraph of text</p>
-        <p>Here is the last paragraph of text</p>
+        
     </div>
 
     <button>Add a paragraph</button>
@@ -21,11 +19,15 @@
     <script>
         var btn = document.querySelector('button');
        
+        var myDiv = document.querySelector('div')
+
+                
         btn.addEventListener('click', function(){
-            var myPs = document.querySelectorAll('p')
-            for(let elem of myPs){
-                elem.style.color='green'
-            }
+            var newP = document.createElement('p')
+            var myText = document.createTextNode('A new paragraph')
+            newP.appendChild(myText)
+
+            myDiv.appendChild(newP)
 
         })
 
