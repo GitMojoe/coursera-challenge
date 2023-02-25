@@ -86,7 +86,7 @@
 
       <article id="two">
         <h2>Article Title</h2>
-        <p>Today's Date</p>
+        <p class="date">Today's Date</p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero enim
           voluptatem recusandae, magni nesciunt quia tenetur doloribus labore
@@ -136,15 +136,21 @@
       // challenge 19
       var h1Color = document.getElementsByTagName("h1");
       h1Color.className = "red";
+
       var dateColor = document.getElementsByClassName("date");
+      // for(let eachdate of dateColor){
+      //   eachdate.style.color = "red";
+      //   console.log(eachdate)
+      // }
       dateColor.className = "red";
+
       // challenge 20
       var dogimg = document.getElementById("one").querySelector("Img");
       dogimg.setAttribute("src", "http://meadpoint.net/images/xmasajax.jpg");
       var articleTwoPs = document.getElementById("two").querySelectorAll("p");
-      for (let eachtP of articleTwoPs) {
-        eachtP.style.color = "blue";
-      }
+      // for (let eachtP of articleTwoPs) {
+      //   eachtP.style.color = "blue";
+      // }
 
       // challenge 21
 
