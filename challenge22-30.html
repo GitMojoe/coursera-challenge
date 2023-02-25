@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-       body{height: 3000px;}
        .one {background-color: beige; transition: all 3s;}
        .two{background-color: blueviolet; transition: all 3s;}
        .three{background-color: coral; transition: all 3s;}
@@ -15,26 +14,30 @@
     </style>
 </head>
 <body class="one">
-    <h1>Javascript Event Challenges 28</h1>
-    <p>scroll Down!</p>  
-
+    <h1>Javascript Event Challenges 30</h1>
+    <p>Press the B key to turn the page beige</p>
+    <p>Press the V key to turn the page blueviolet</p>
+    <p>Press the C key to turn the page coral</p>
+    <p>Press the F key to turn the page cornflower</p>
+    <p>Press the G key to turn the page darkgoldenrod</p>
 
 <script>
-   var change = document.querySelector('body')
-   var pagetop; 
-   
-   window.addEventListener('scroll', function(){
-    pagetop = window.pageYOffset;
-    if(pagetop<=500){
-    change.className='two'
-    }else if(pagetop >500 && pagetop <=1000){
-        change.className='three'
-    }else if(pagetop > 1000 && pagetop <= 1500){
-        change.className='four'
-    }else{
-        change.className='five'
-    }
-   })
+    var myBody = document.querySelector('body');
+
+  document.addEventListener('keydown', function(event){
+        var keypressed = event.which;    
+
+        switch (keypressed){
+            case 66: myBody.className ='one'; break;
+            case 86: myBody.className ='two'; break;
+            case 67: myBody.className ='three'; break;
+            case 70: myBody.className ='four'; break;
+            case 71: myBody.className ='five'; break;
+            default: alert('PRESS THE EFIN KEYS MAN')
+        }
+     
+        
+  })
 
 </script>
 
