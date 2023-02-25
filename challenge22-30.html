@@ -15,21 +15,31 @@
     </div>
 
     <button>Add a paragraph</button>
+    <button>Remove a paragraph</button>
     
     <script>
-        var btn = document.querySelector('button');
+        var btnAdd = document.querySelectorAll('button')[0];
+        var btnDelete = document.querySelectorAll('button')[1];
        
-        var myDiv = document.querySelector('div')
-
-                
-        btn.addEventListener('click', function(){
+        var myDiv = document.querySelector('div');
+        
+        btnAdd.addEventListener('click', function(){
+            
             var newP = document.createElement('p')
-            var myText = document.createTextNode('A new paragraph')
-            newP.appendChild(myText)
-
+            var pText = document.createTextNode('this new paragraph')
+            newP.appendChild(pText)
             myDiv.appendChild(newP)
 
+        });
+       
+        btnDelete.addEventListener('click', function(){
+            var allPs = document.querySelectorAll('p')
+            myDiv.removeChild(myDiv.children[allPs.length-1])
         })
+        
+
+
+
 
     </script>
 </body>
