@@ -10,7 +10,7 @@
     <h1>Javascript Event Challenges 22</h1>
 
     <div>
-        <p>Here is the first paragraph of text</p>
+        <p>This is paragraph number 1</p>
         
     </div>
 
@@ -22,19 +22,25 @@
         var btnDelete = document.querySelectorAll('button')[1];
        
         var myDiv = document.querySelector('div');
-        
+        var num =1
         btnAdd.addEventListener('click', function(){
-            
+            num++
             var newP = document.createElement('p')
-            var pText = document.createTextNode('this new paragraph')
+            var pText = document.createTextNode(`This is paragraph number ${num}`)
             newP.appendChild(pText)
             myDiv.appendChild(newP)
 
         });
        
         btnDelete.addEventListener('click', function(){
+            if(num>1){
+                num--
             var allPs = document.querySelectorAll('p')
             myDiv.removeChild(myDiv.children[allPs.length-1])
+            }else{
+                alert("don't delete the last paragraph")
+            }
+
         })
         
 
