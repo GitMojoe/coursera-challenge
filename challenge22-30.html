@@ -8,15 +8,25 @@
 </head>
 <body>
     <h1>Javascript Event Challenges 22</h1>
-    <p>Here is a paragraph of text</p>
-    <button>click me</button>
+
+    <div>
+        <p>Here is the first paragraph of text</p>
+        <p>Here is the second paragraph of text</p>
+        <p>Here is the third paragraph of text</p>
+        <p>Here is the last paragraph of text</p>
+    </div>
+
+    <button>Add a paragraph</button>
     
     <script>
         var btn = document.querySelector('button');
-        var myP = document.querySelector('p');
-        
+       
         btn.addEventListener('click', function(){
-            myP.style.color='green'
+            var myPs = document.querySelectorAll('p')
+            for(let elem of myPs){
+                elem.style.color='green'
+            }
+
         })
 
     </script>
