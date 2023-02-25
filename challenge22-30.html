@@ -6,39 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div{
-            width: 50px;
-            height: 50px;
-            background-color: rgb(255,0,0);
-            transition:all 2s;
-        }
-
-        .big{
-            width: 200px;
-            height: 200px;
-            background-color: rgb(0,0,255);
-            border-radius: 50%;
-            transition: all 2s;
-        }
+       body{height: 3000px;}
+       .one {background-color: beige; transition: all 3s;}
+       .two{background-color: blueviolet; transition: all 3s;}
+       .three{background-color: coral; transition: all 3s;}
+       .four{background-color: cornflowerblue; transition: all 3s;}
+       .five{background-color: darkgoldenrod; transition: all 3s;}
     </style>
 </head>
-<body>
+<body class="one">
     <h1>Javascript Event Challenges 28</h1>
-    <div></div>    
+    <p>scroll Down!</p>  
 
 
 <script>
-var myDiv = document.querySelector('div')
+   var change = document.querySelector('body')
+   var pagetop; 
+   
+   window.addEventListener('scroll', function(){
+    pagetop = window.pageYOffset;
+    if(pagetop<=500){
+    change.className='two'
+    }else if(pagetop >500 && pagetop <=1000){
+        change.className='three'
+    }else if(pagetop > 1000 && pagetop <= 1500){
+        change.className='four'
+    }else{
+        change.className='five'
+    }
+   })
 
-myDiv.addEventListener('mouseover', function(){
-    myDiv.className='big'
-
-})
-
-myDiv.addEventListener('mouseout', function(){
-    //myDiv.className=''; //this works too
-myDiv.removeAttribute('class')
-})
 </script>
 
 </body>
