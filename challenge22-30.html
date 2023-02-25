@@ -8,43 +8,29 @@
 </head>
 <body>
     <h1>Javascript Event Challenges 22</h1>
-
-    <div>
-        <p>This is paragraph number 1</p>
-        
-    </div>
-
-    <button>Add a paragraph</button>
-    <button>Remove a paragraph</button>
     
-    <script>
-        var btnAdd = document.querySelectorAll('button')[0];
-        var btnDelete = document.querySelectorAll('button')[1];
-       
-        var myDiv = document.querySelector('div');
-        var num =1
-        btnAdd.addEventListener('click', function(){
-            num++
-            var newP = document.createElement('p')
-            var pText = document.createTextNode(`This is paragraph number ${num}`)
-            newP.appendChild(pText)
-            myDiv.appendChild(newP)
+    <form method="get">
+       <label for="pixels-label">Input Pixels: <input type="number" name="pixels" id=""></label> 
+        <label for="submit-label"><input type="submit" id="submit"></label>
+    </form>
+   
+   <script>   
+        var myForm = document.querySelector('form');
+        var heading = document.querySelector('h1')
 
-        });
-       
-        btnDelete.addEventListener('click', function(){
-            if(num>1){
-                num--
-            var allPs = document.querySelectorAll('p')
-            myDiv.removeChild(myDiv.children[allPs.length-1])
+        myForm.addEventListener('submit', function(Event){
+            event.preventDefault();
+
+            var formData = document.querySelector('input').value;
+            if(formData){
+                heading.style.fontSize=formData +'px';
             }else{
-                alert("don't delete the last paragraph")
+                alert("Please enter a number greater than 0")
             }
+        });
 
-        })
+
         
-
-
 
 
     </script>
